@@ -15,7 +15,8 @@ const movie1= {
 }
 
 const App = () => {
-     const [movie, setMovie] = useState([]);
+    const [movie, setMovie] = useState([]);
+    const [search, setSearch] = useState('');
     const searchMovie = async (title) => {
         const response = await fetch(`${API_URL}&s=${title}`);
         const data = await response.json();
@@ -34,17 +35,26 @@ const App = () => {
             <div className='search'>
                 <input 
                     placeholder='busca tus peliculas aqui'
-                    value="Superman"
-                    onChange={() => {}}
+                    value={search}
+                    onChange={(event) => setSearch(event.target.value)}
                 />
                 <img src={searchIcon} 
                 alt="search"
-                onClick={() =>{}}
+                onClick={() =>searchMovie(search)}
                 />
             </div>
-            <div className="container">
-                <MovieCard movie1={movie[0]}/>
-            </div>
+            {
+                movie?.length > 0 ? ( <div className="container">
+                {movie.map((theMovie)=>(
+                   <MovieCard movie={theMovie}/>
+                ))}
+            </div>) :(
+                <div className='empty'>
+                     <h2>There are no movies found</h2>
+                </div>
+            )
+            }
+
         </div>
     );
 }
