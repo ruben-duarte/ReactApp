@@ -34,13 +34,17 @@ h1 {
   letter-spacing: 0.9px;
   background: linear-gradient(
     90deg,
-    rgb(230, 218, 62) 0%,
+    #99c0e7 0%,
     rgba(249, 211, 180, 0) 100%
   );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: fit-content;
+}
+
+.icon {
+  font-size: 38px;
 }
 
 .search {
@@ -53,9 +57,9 @@ h1 {
 
   padding: 1.5rem 1.75rem;
   border-radius: 3rem;
-  background: #1f2123;
-  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+  background: #99c0e7;
+  -webkit-box-shadow: 5px 5px 7px #536ea1, -5px -5px 7px #2f556d;
+  box-shadow: 5px 5px 7px #63718d, -5px -5px 7px #426074;
 }
 
 .search input {
@@ -67,8 +71,8 @@ h1 {
   padding-right: 1rem;
 
   outline: none;
-  color: #a1a1a1;
-  background: #1f2123;
+  color: #0d061a;
+  background: #9fbad4;
 }
 
 .search img {
